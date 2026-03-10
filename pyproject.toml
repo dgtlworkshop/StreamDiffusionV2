@@ -56,7 +56,7 @@ torchaudio = { index = "pytorch" }
 
 [[tool.uv.index]]
 name = "pytorch"
-url = "https://download.pytorch.org/whl/cu124"
+url = "https://download.pytorch.org/whl/cu129"
 
 
 [tool.setuptools.packages.find]
