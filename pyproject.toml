@@ -9,8 +9,11 @@ requires-python = ">=3.10,<3.11"
 dependencies = [
 	"aiohttp>=3.13.3",
 	"diffusers>=0.37.0",
+	"easydict>=1.13",
 	"einops>=0.8.2",
 	"fastapi>=0.135.1",
+	"flash-attn>=2.8.3",
+	"ftfy>=6.3.1",
 	"lmdb>=1.7.5",
 	"markdown2>=2.5.5",
 	"matplotlib>=3.10.8",
@@ -42,6 +45,9 @@ dependencies = [
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[dependency-groups]
+dev = ["huggingface-hub>=1.6.0", "setuptools-py2cfg>=2.1.0"]
+
 [tool.uv.sources]
 torch = { index = "pytorch" }
 torchvision = { index = "pytorch" }
@@ -51,9 +57,10 @@ torchaudio = { index = "pytorch" }
 name = "pytorch"
 url = "https://download.pytorch.org/whl/cu124"
 
-[dependency-groups]
-dev = ["huggingface-hub>=1.6.0", "setuptools-py2cfg>=2.1.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["causvid*", "streamv2v*"]
+
+[tool.uv.extra-build-dependencies]
+flash-attn = ["packaging", "wheel", "torch"]
