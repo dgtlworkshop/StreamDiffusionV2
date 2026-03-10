@@ -1,5 +1,7 @@
+
+
 [project]
-name = "streamdiffusionv2"
+name = "CausVid"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -36,6 +38,10 @@ dependencies = [
 	"websockets>=16.0",
 ]
 
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.uv.sources]
 torch = { index = "pytorch" }
 torchvision = { index = "pytorch" }
@@ -44,3 +50,10 @@ torchaudio = { index = "pytorch" }
 [[tool.uv.index]]
 name = "pytorch"
 url = "https://download.pytorch.org/whl/cu124"
+
+[dependency-groups]
+dev = ["huggingface-hub>=1.6.0", "setuptools-py2cfg>=2.1.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["causvid*", "streamv2v*"]
