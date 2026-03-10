@@ -653,17 +653,22 @@ if __name__ == "__main__":
 
     config.pretty_print()
     if config.num_gpus > 1:
+        logging.info("Starting MultiGPUPipeline...")
         from vid2vid_pipe import MultiGPUPipeline
         pipeline = MultiGPUPipeline(config)
+        logging.info("MultiGPUPipeline started")
     else:
+        logging.info("Starting Pipeline...")
         from vid2vid import Pipeline
         pipeline = Pipeline(config)
+        logging.info("Pipeline started")
 
     app_obj = App(config, pipeline)
     app = app_obj.app
     app_instance = app_obj  # Set global reference for signal handler
 
     try:
+        logging.info("Starting uvicorn server...")
         uvicorn.run(
             app,
             host=config.host,
