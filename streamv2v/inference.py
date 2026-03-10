@@ -114,7 +114,7 @@ class SingleGPUInferencePipeline:
         self.base_chunk_size = 4
         self.t_refresh = 50
 
-        self.t2v = config.t2v
+        self.t2v = config.get("t2v")
 
         
         self.logger.info("Single GPU inference pipeline manager initialized")
@@ -356,7 +356,7 @@ def main():
     print(f"Denoising Step List: {config.denoising_step_list}")
     
     # Load input video
-    if not args.t2v:
+    if not args.get("t2v"):
         input_video_original = load_mp4_as_tensor(args.video_path, resize_hw=(args.height, args.width)).unsqueeze(0)
         print(f"Input video tensor shape: {input_video_original.shape}")
         b, c, t, h, w = input_video_original.shape
@@ -370,7 +370,7 @@ def main():
     chunk_size = 4 * config.num_frame_per_block
     num_chunks = (t - 1) // chunk_size
 
-    if args.t2v:
+    if args.get("t2v"):
         num_chunks+=1
     # Initialize pipeline manager
     pipeline_manager = SingleGPUInferencePipeline(config, device)
