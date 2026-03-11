@@ -13,7 +13,7 @@ dependencies = [
 	"easydict>=1.13",
 	"einops>=0.8.2",
 	"fastapi>=0.135.1",
-	"flash-attn==2.7.4.post1",
+	"flash-attn>=2.7",
 	"ftfy>=6.3.1",
 	"lmdb>=1.7.5",
 	"markdown2>=2.5.5",
@@ -56,7 +56,7 @@ torchaudio = { index = "pytorch" }
 
 [[tool.uv.index]]
 name = "pytorch"
-url = "https://download.pytorch.org/whl/cu129"
+url = "https://download.pytorch.org/whl/cu128"
 
 
 [tool.setuptools.packages.find]
