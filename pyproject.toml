@@ -31,7 +31,7 @@ dependencies = [
 	"scipy>=1.15.3",
 	"starlette>=0.52.1",
 	"timm>=1.0.25",
-	"torch",
+	"torch>=2.2",
 	"torchaudio",
 	"torchvision",
 	"tqdm>=4",
@@ -40,6 +40,9 @@ dependencies = [
 	"uvicorn>=0.41.0",
 	"wandb>=0.25.0",
 	"websockets>=16.0",
+	# Required for flash-attn
+	"setuptools",
+	"wheel"
 ]
 
 [build-system]
@@ -48,6 +51,13 @@ build-backend = "setuptools.build_meta"
 
 [dependency-groups]
 dev = ["huggingface-hub>=1.6.0", "setuptools-py2cfg>=2.1.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["causvid*", "streamv2v*"]
+
+[tool.uv]
+no-build-isolation-package = ["flash-attn"]
 
 [tool.uv.sources]
 torch = { index = "pytorch" }
@@ -58,10 +68,5 @@ torchaudio = { index = "pytorch" }
 name = "pytorch"
 url = "https://download.pytorch.org/whl/cu128"
 
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["causvid*", "streamv2v*"]
-
 [tool.uv.extra-build-dependencies]
-flash-attn = ["packaging", "wheel", "torch", "numpy"]
+flash-attn = ["packaging", "setuptools", "wheel", "torch", "numpy"]

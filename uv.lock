@@ -164,6 +164,7 @@ dependencies = [
     { name = "pydub" },
     { name = "requests" },
     { name = "scipy" },
+    { name = "setuptools" },
     { name = "starlette" },
     { name = "timm" },
     { name = "torch" },
@@ -175,6 +176,7 @@ dependencies = [
     { name = "uvicorn" },
     { name = "wandb" },
     { name = "websockets" },
+    { name = "wheel" },
 ]
 
 [package.dev-dependencies]
@@ -207,9 +209,10 @@ requires-dist = [
     { name = "pydub", specifier = ">=0.25.1" },
     { name = "requests", specifier = ">=2" },
     { name = "scipy", specifier = ">=1.15.3" },
+    { name = "setuptools" },
     { name = "starlette", specifier = ">=0.52.1" },
     { name = "timm", specifier = ">=1.0.25" },
-    { name = "torch", index = "https://download.pytorch.org/whl/cu128" },
+    { name = "torch", specifier = ">=2.2", index = "https://download.pytorch.org/whl/cu128" },
     { name = "torchaudio", index = "https://download.pytorch.org/whl/cu128" },
     { name = "torchvision", index = "https://download.pytorch.org/whl/cu128" },
     { name = "tqdm", specifier = ">=4" },
@@ -218,6 +221,7 @@ requires-dist = [
     { name = "uvicorn", specifier = ">=0.41.0" },
     { name = "wandb", specifier = ">=0.25.0" },
     { name = "websockets", specifier = ">=16.0" },
+    { name = "wheel" },
 ]
 
 [package.metadata.requires-dev]
@@ -1395,6 +1399,14 @@ wheels = [
 ]
 
 [[package]]
+name = "setuptools"
+version = "70.2.0"
+source = { registry = "https://download.pytorch.org/whl/cu128" }
+wheels = [
+    { url = "https://download.pytorch.org/whl/setuptools-70.2.0-py3-none-any.whl", hash = "sha256:b8b8060bb426838fbe942479c90296ce976249451118ef566a5a0b7d8b78fb05" },
+]
+
+[[package]]
 name = "setuptools-py2cfg"
 version = "2.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1724,6 +1736,18 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/02/8e/81f40fb00fd125357814e8c3025738fc4ffc3da4b6b4a4472a82ba304b41/websockets-16.0-cp310-cp310-win32.whl", hash = "sha256:37b31c1623c6605e4c00d466c9d633f9b812ea430c11c8a278774a1fde1acfa9", size = 178249, upload-time = "2026-01-10T09:22:32.083Z" },
     { url = "https://files.pythonhosted.org/packages/b4/5f/7e40efe8df57db9b91c88a43690ac66f7b7aa73a11aa6a66b927e44f26fa/websockets-16.0-cp310-cp310-win_amd64.whl", hash = "sha256:8e1dab317b6e77424356e11e99a432b7cb2f3ec8c5ab4dabbcee6add48f72b35", size = 178685, upload-time = "2026-01-10T09:22:33.345Z" },
     { url = "https://files.pythonhosted.org/packages/6f/28/258ebab549c2bf3e64d2b0217b973467394a9cea8c42f70418ca2c5d0d2e/websockets-16.0-py3-none-any.whl", hash = "sha256:1637db62fad1dc833276dded54215f2c7fa46912301a24bd94d45d46a011ceec", size = 171598, upload-time = "2026-01-10T09:23:45.395Z" },
+]
+
+[[package]]
+name = "wheel"
+version = "0.46.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "packaging" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz", hash = "sha256:e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803", size = 60605, upload-time = "2026-01-22T12:39:49.136Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/87/22/b76d483683216dde3d67cba61fb2444be8d5be289bf628c13fc0fd90e5f9/wheel-0.46.3-py3-none-any.whl", hash = "sha256:4b399d56c9d9338230118d705d9737a2a468ccca63d5e813e2a4fc7815d8bc4d", size = 30557, upload-time = "2026-01-22T12:39:48.099Z" },
 ]
 
 [[package]]
