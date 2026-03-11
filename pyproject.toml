@@ -57,6 +57,8 @@ where = ["."]
 include = ["causvid*", "streamv2v*"]
 
 [tool.uv]
+# https://github.com/cicorias/msi-setup-wsl2-nvidia-cuda-pytorch?tab=readme-ov-file#step-6-set-up-pytorch-project-with-uv
+index-strategy = "unsafe-best-match"
 no-build-isolation-package = ["flash-attn"]
 
 [tool.uv.sources]
