@@ -191,7 +191,7 @@ requires-dist = [
     { name = "easydict", specifier = ">=1.13" },
     { name = "einops", specifier = ">=0.8.2" },
     { name = "fastapi", specifier = ">=0.135.1" },
-    { name = "flash-attn", specifier = "==2.7.4.post1" },
+    { name = "flash-attn", specifier = ">=2.7" },
     { name = "ftfy", specifier = ">=6.3.1" },
     { name = "lmdb", specifier = ">=1.7.5" },
     { name = "markdown2", specifier = ">=2.5.5" },
